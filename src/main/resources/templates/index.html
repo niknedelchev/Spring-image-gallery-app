@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Image gallery app</title>
+</head>
+<body>
+	<h1>Image gallery app</h1><br/>
+	
+	<h3>Upload image</h3>
+	 <form method="POST" enctype="multipart/form-data" action="/">
+    	<p>Description: <input type="text" name="description" /></p>
+        <p>File: <input type="file" name="file" /></p>
+        <p><input type="submit" value="Upload" /></p>
+    </form>
+
+	<div><a href="/images"> Go to list of all images</a></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

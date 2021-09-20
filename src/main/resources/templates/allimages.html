@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Image gallery app</title>
+</head>
+<body>
+	<h1>Image gallery app</h1>
+	<br />
+
+	<h3>All images</h3>
+
+		<table class="table" >
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Image</th>
+				<th scope="col">Description</th>
+				<th scope="col">File name</th>
+					<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="image : ${images}">
+				<td><span th:text="${image.id}"></td>
+				<td><img th:src="@{'/image/' + ${image.id}}" style="width:150px;"/></td>
+				<td><span th:text="${image.description}"></td>
+				<td><span th:text="${image.filename}"></td>
+				<td><a th:href="@{'/delete/' + ${image.id}}"> Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div><a href="/"> Go to image upload page</a></div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
